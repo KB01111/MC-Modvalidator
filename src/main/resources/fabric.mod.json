@@ -3,7 +3,7 @@
 	"id": "mc-modvalidator-fabric",
 	"version": "${version}",
 	"name": "MC-Modvalidator-Fabric",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Runtime diagnostics and autofix tool that scans loaded mods for Kotlin-interop and porting issues.",
 	"authors": [
 		"Me!"
 	],
