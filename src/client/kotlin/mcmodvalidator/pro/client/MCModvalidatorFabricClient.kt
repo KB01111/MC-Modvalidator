@@ -36,7 +36,7 @@ object MCModvalidatorFabricClient : ClientModInitializer {
                             Minecraft.getInstance().execute {
                                 Minecraft.getInstance().setScreen(ModValidatorScreen(Minecraft.getInstance().screen))
                             }
-                            ctx.source.sendSuccess({ Component.literal("Opening ModValidator UI...") }, false)
+                            ctx.source.sendFeedback(Component.literal("Opening ModValidator UI..."))
                             1
                         }
                 )
