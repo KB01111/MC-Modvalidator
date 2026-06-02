@@ -44,12 +44,13 @@ class ModValidatorScreen(private val parent: Screen?) : Screen(Component.literal
             val index = scrollOffset + i
             if (index >= mods.size) break
             val (modId, count) = mods[index]
+            val issues = IssueRegistry.getByModId(modId)
             val isSelected = modId == selectedMod
             val bgColor = if (isSelected) 0xFF888888.toInt() else 0xFF444444.toInt()
             val textColor = when {
                 count == 0 -> 0xAAAAAA
-                IssueRegistry.getByModId(modId).any { it.severity == Severity.ERROR } -> 0xFF5555
-                IssueRegistry.getByModId(modId).any { it.severity == Severity.WARN } -> 0xFFAA55
+                issues.any { it.severity == Severity.ERROR } -> 0xFF5555
+                issues.any { it.severity == Severity.WARN } -> 0xFFAA55
                 else -> 0x55FF55
             }
             val y = leftY + i * lineHeight
